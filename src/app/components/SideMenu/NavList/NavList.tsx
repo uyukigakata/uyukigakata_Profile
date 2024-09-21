@@ -18,35 +18,35 @@ const NavList = () => {
             id: 1, 
             label: 'Home', 
             link: '/', 
-            icon: <FaHome className="size-5" />
+            icon: <FaHome className="size-3" />
         },
         {
             id: 2, 
             label: 'write', 
             link: '/write', 
-            icon: <FaPen className="size-5" />
+            icon: <FaPen className="size-3" />
         },
         {
             id: 3, 
             label: 'read', 
             link: '/read', 
-            icon: <SlEnvolopeLetter className="size-5" />
+            icon: <SlEnvolopeLetter className="size-3" />
         },
         {
             id: 4, 
             label: 'delivery', 
             link: '/delivery', 
-            icon: <IoMdWalk className="size-5" />
+            icon: <IoMdWalk className="size-3" />
         },
         {
             id: 5, 
             label: 'friends', 
             link: '/friends', 
-            icon: <FaAddressCard className="size-5" />
+            icon: <FaAddressCard className="size-3" />
         },
     ]
     return (
-        <div className="mt-24">
+        <div className="flex flex-row justify-around w-full">
             {navList.map((item) => (
                 <NavItem 
                     key={item.id} 
