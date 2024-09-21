@@ -1,6 +1,6 @@
 const WritePage = () => {
   return (
-    <div>page</div>
+    <div>WritePage</div>
   )
 }
 
