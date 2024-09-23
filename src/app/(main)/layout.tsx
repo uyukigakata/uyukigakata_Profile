@@ -8,7 +8,7 @@ const MainLayout = ({
   return (
     <div className="flex flex-col h-screen">
      
-      <main className="bg-green-300 flex-1 overflow-auto">
+      <main className="bg-green-200 flex-1 overflow-auto">
         {children}
       </main>
 
