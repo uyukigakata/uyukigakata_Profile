@@ -1,5 +1,6 @@
 'use client'
 
+import NavigationButton from '@/components/NavigationButton/NavigationButton';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
@@ -30,14 +31,10 @@ const WriteUserChoicePage = () => {
           
         </div>
       </div>
-
-      {/* 書くボタン */}
-      <button
-        onClick={handleWriteClick}
-        className="bg-green-500 text-white text-lg font-bold mt-8 py-2 px-4 rounded-lg shadow-lg"
-      >
-        書く
-      </button>
+      <NavigationButton 
+        label="書く" 
+        targetPage="/writing" 
+      />
     </div>
   );
 };
