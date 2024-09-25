@@ -1,6 +1,20 @@
 import Image from "next/image"
 
-export default function Home() {
+import {createServerComponentClient} from '@supabase/auth-helpers-nextjs'
+import { cookies } from "next/headers"
+
+import type { Database } from "@/lib/database.types"
+
+
+const Home = async() => {
+  const supabase = createServerComponentClient<Database>({
+    cookies,
+  })
+
+  const{
+    data: {session},
+  } = await supabase.auth.getSession()
+
   return (
     <div className="flex flex-col items-center justify-start h-screen pt-10">
         <Image
