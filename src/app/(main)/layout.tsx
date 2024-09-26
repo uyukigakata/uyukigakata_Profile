@@ -1,5 +1,6 @@
 import SideMenu from "../../components/SideMenu/SideMenu";
 
+
 const MainLayout = ({
     children,
 }: Readonly<{
