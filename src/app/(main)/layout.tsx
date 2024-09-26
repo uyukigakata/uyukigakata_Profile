@@ -11,7 +11,6 @@ const MainLayout = ({
       <main className="bg-green-200 flex-1 overflow-auto">
         {children}
       </main>
-
       <SideMenu />
     </div>
   )
