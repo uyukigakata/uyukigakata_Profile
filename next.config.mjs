@@ -5,7 +5,7 @@ const nextConfig = {
     },
     images:{
         domains: ['czmwsvupdeuxfotssvhv']//referensID
-    }
+    },
 };
 
 export default nextConfig;

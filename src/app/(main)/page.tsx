@@ -60,26 +60,23 @@ export default function Home() {
           <ul className="text-gray-300 space-y-2">
             <li>
               <strong>年齢:</strong> {age}歳
-            </li>
-            <strong>好きな分野:</strong> 
-            <div className="flex flex-wrap gap-2 mt-2">
-              {["web", "mobile", "セキュリティ"].map((tech) => (
-                  <span key={tech} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            <li>
+            
+              <strong>好きな分野:</strong> 
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {["web", "mobile", "セキュリティ"].map((tech) => (
+                      <span key={tech} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
+                        {tech}
+                      </span>
+                    ))}
+                </div>
               <strong>好きな技術:</strong>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {["Next.js", "TypeScript", "Prisma", "Python", "Flutter", "セキュリティ"].map((tech) => (
-                  <span key={tech} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </li>
-            <li>
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {["Next.js", "TypeScript", "Prisma", "Python", "Flutter", "セキュリティ"].map((tech) => (
+                    <span key={tech} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               <strong>好きなツール:</strong> 
                 <div className="flex flex-wrap gap-2 mt-2">
                   {["canva", "Figma", "VSC"].map((tech) => (
