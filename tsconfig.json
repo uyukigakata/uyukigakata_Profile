@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,16 +23,23 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@types/*": ["./src/types/*"]  // ここで types フォルダを追加
-    }
+      "@/*": [
+        "./src/*"
+      ],
+      "@types/*": [
+        "./src/types/*"
+      ] // ここで types フォルダを追加
+    },
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/**/*"  // src ディレクトリを include に追加
+    "src/**/*" // src ディレクトリを include に追加
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
