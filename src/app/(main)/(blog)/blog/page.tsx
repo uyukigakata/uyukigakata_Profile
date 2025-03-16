@@ -4,7 +4,7 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import { FaPen } from 'react-icons/fa6';
 
-const WritePage = () => {
+const BlogPage = () => {
   const router = useRouter(); // useRouterのフックを使用
 
   const handlePenClick = () => {
@@ -26,4 +26,4 @@ const WritePage = () => {
   );
 };
 
-export default WritePage;
+export default BlogPage;

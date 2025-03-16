@@ -1,8 +1,11 @@
 import { FaPen } from "react-icons/fa6";
-import { SlEnvolopeLetter } from "react-icons/sl";
-import { FaHome, FaAddressCard } from "react-icons/fa";
-import { IoMdWalk } from "react-icons/io";
+import { FaHome } from "react-icons/fa";
 import NavItem from "./NavItem/NavItem";
+import { FaAward } from "react-icons/fa6";
+import { MdDeveloperMode } from "react-icons/md";
+import { GiSkills } from "react-icons/gi";
+
+
 
 interface NavItemType{
     id: number;
@@ -22,27 +25,27 @@ const NavList = () => {
         },
         {
             id: 2, 
-            label: 'write', 
-            link: '/write', 
+            label: 'blog', 
+            link: '/blog', 
             icon: <FaPen className="size-3" />
         },
         {
             id: 3, 
-            label: 'read', 
-            link: '/read', 
-            icon: <SlEnvolopeLetter className="size-3" />
+            label: 'skills', 
+            link: '/skills', 
+            icon: <GiSkills  className="size-3" />
         },
         {
             id: 4, 
-            label: 'delivery', 
-            link: '/delivery', 
-            icon: <IoMdWalk className="size-3" />
+            label: 'products', 
+            link: '/products', 
+            icon: <MdDeveloperMode className="size-3" />
         },
         {
             id: 5, 
-            label: 'friends', 
-            link: '/friends', 
-            icon: <FaAddressCard className="size-3" />
+            label: 'awords', 
+            link: '/awords', 
+            icon: <FaAward className="size-3" />
         },
     ]
     return (
