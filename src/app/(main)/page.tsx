@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Home() {
-  const BIRTH_YEAR = 2003;  // 生まれた年を設定
-  const BIRTH_MONTH = 12;    // 生まれた月を設定
-  const BIRTH_DAY = 4;     // 生まれた日を設定
+  const BIRTH_YEAR = 2003; // 生まれた年
+  const BIRTH_MONTH = 12; // 生まれた月
+  const BIRTH_DAY = 4; // 生まれた日
 
   const [age, setAge] = useState(0);
 
@@ -60,31 +60,36 @@ export default function Home() {
           <ul className="text-gray-300 space-y-2">
             <li>
               <strong>年齢:</strong> {age}歳
-            
-              <strong>好きな分野:</strong> 
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {["web", "mobile", "セキュリティ"].map((tech) => (
-                      <span key={tech} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
-                        {tech}
-                      </span>
-                    ))}
-                </div>
+            </li>
+            <li>
+              <strong>好きな分野:</strong>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {["web", "mobile", "セキュリティ"].map((tech) => (
+                  <span key={tech} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </li>
+            <li>
               <strong>好きな技術:</strong>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {["Next.js", "TypeScript", "Prisma", "Python", "Flutter", "セキュリティ"].map((tech) => (
-                    <span key={tech} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              <strong>好きなツール:</strong> 
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {["canva", "Figma", "VSC"].map((tech) => (
-                    <span key={tech} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {["Next.js", "TypeScript", "Prisma", "Python", "Flutter", "セキュリティ"].map((tech) => (
+                  <span key={tech} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </li>
+            <li>
+              <strong>好きなツール:</strong>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {["canva", "Figma", "VSC"].map((tech) => (
+                  <span key={tech} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </li>
           </ul>
         </div>
