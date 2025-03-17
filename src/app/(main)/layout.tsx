@@ -1,6 +1,8 @@
-import NavList from "../../components/SideMenu/NavList/NavList"; // ナビゲーションリストをインポート
-import NavFooter from "../../components/SideMenu/NavFooter/NavFooter"; // フッターを分離して管理
-import Image from "next/image";
+'use client'
+
+import NavList from "@/components/SideMenu/NavList/NavList"; // ナビゲーションリストをインポート
+import NavFooter from "@/components/SideMenu/NavFooter/NavFooter"; // フッターを分離して管理
+
 
 const MainLayout = ({
   children,
