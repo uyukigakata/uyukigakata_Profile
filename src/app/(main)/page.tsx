@@ -74,7 +74,7 @@ export default function Home() {
             <li>
               <strong>好きな技術:</strong>
               <div className="flex flex-wrap gap-2 mt-2">
-                {["Next.js", "TypeScript", "Prisma", "Python", "Flutter", "セキュリティ"].map((tech) => (
+                {["Next.js", "TypeScript", "Prisma", "Python", "Flutter"].map((tech) => (
                   <span key={tech} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
                     {tech}
                   </span>

@@ -6,6 +6,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "uyukigakata Profile",
   description: "Yuu's profile",
+  icons:{
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+
+  }
 };
 export default function RootLayout({
   children,
