@@ -1,0 +1,29 @@
+{
+    "name": "yuu",
+    "university": "金沢工業大学 | KIT",
+    "department": "工学部・情報工学科",
+    "birthYear": 2003,
+    "birthMonth": 12,
+    "birthDay": 4,
+    "interests": [
+        "web", 
+        "mobile", 
+        "セキュリティ",
+        "ゲーム"
+    ],
+    "technologies": [
+        "Next.js", 
+        "TypeScript", 
+        "Python", 
+        "Flutter"
+    ],
+    "tools": [
+        "canva", 
+        "Figma", 
+        "VSC"
+    ],
+    "contact": [
+        "silber6019"
+    ]
+  }
+  
