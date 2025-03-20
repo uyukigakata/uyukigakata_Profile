@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import profileData from "@/data/profile.json";
 
@@ -28,10 +28,11 @@ export default function Home() {
       <div className="absolute top-0 left-0 w-full h-64 bg-gray-700">
         <Image
           src="/LiveT.jpg"
-          layout="fill"
-          objectFit="cover"
-          alt="背景画像"
+          fill
+          style ={{ objectFit: 'cover' }}
+          alt="Description"
           className="opacity-70"
+          priority
         />
       </div>
 
@@ -89,7 +90,7 @@ export default function Home() {
               </div>
             </li>
             <li>
-              <strong>Discord:</strong>
+              <strong>Discorde:</strong>
               <div className="flex flex-wrap gap-2 mt-2">
                 {profileData.contact.map((contact) => (
                   <span key={contact} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
