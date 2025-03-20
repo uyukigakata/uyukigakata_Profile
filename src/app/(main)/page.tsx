@@ -2,22 +2,19 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import profileData from "@/data/profile.json";
 
 export default function Home() {
-  const BIRTH_YEAR = 2003; // 生まれた年
-  const BIRTH_MONTH = 12; // 生まれた月
-  const BIRTH_DAY = 4; // 生まれた日
-
   const [age, setAge] = useState(0);
 
   useEffect(() => {
     const today = new Date();
-    let currentAge = today.getFullYear() - BIRTH_YEAR;
+    let currentAge = today.getFullYear() - profileData.birthYear;
 
     // 誕生日が来ていなければ1歳引く
     if (
-      today.getMonth() + 1 < BIRTH_MONTH ||
-      (today.getMonth() + 1 === BIRTH_MONTH && today.getDate() < BIRTH_DAY)
+      today.getMonth() + 1 < profileData.birthMonth ||
+      (today.getMonth() + 1 === profileData.birthMonth && today.getDate() < profileData.birthDay)
     ) {
       currentAge--;
     }
@@ -50,9 +47,9 @@ export default function Home() {
         />
 
         {/* 名前と大学情報 */}
-        <h1 className="text-3xl font-bold text-white mt-4">yuu</h1>
-        <h2 className="text-lg text-gray-300">金沢工業大学 | KIT</h2>
-        <p className="text-sm text-gray-400 mb-6">工学部・情報工学科</p>
+        <h1 className="text-3xl font-bold text-white mt-4">{profileData.name}</h1>
+        <h2 className="text-lg text-gray-300">{profileData.university}</h2>
+        <p className="text-sm text-gray-400 mb-6">{profileData.department}</p>
 
         {/* 基本情報カード */}
         <div className="w-full max-w-md bg-gray-800 p-6 rounded-lg shadow-md">
@@ -64,9 +61,9 @@ export default function Home() {
             <li>
               <strong>好きな分野:</strong>
               <div className="flex flex-wrap gap-2 mt-2">
-                {["web", "mobile", "セキュリティ"].map((tech) => (
-                  <span key={tech} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
-                    {tech}
+                {profileData.interests.map((interest) => (
+                  <span key={interest} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
+                    {interest}
                   </span>
                 ))}
               </div>
@@ -74,7 +71,7 @@ export default function Home() {
             <li>
               <strong>好きな技術:</strong>
               <div className="flex flex-wrap gap-2 mt-2">
-                {["Next.js", "TypeScript", "Prisma", "Python", "Flutter"].map((tech) => (
+                {profileData.technologies.map((tech) => (
                   <span key={tech} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
                     {tech}
                   </span>
@@ -84,9 +81,19 @@ export default function Home() {
             <li>
               <strong>好きなツール:</strong>
               <div className="flex flex-wrap gap-2 mt-2">
-                {["canva", "Figma", "VSC"].map((tech) => (
-                  <span key={tech} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
-                    {tech}
+                {profileData.tools.map((tool) => (
+                  <span key={tool} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </li>
+            <li>
+              <strong>Discord:</strong>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {profileData.contact.map((contact) => (
+                  <span key={contact} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
+                    {contact}
                   </span>
                 ))}
               </div>
