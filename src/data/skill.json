@@ -3,10 +3,8 @@
     "JavaScript", 
     "TypeScript", 
     "React", 
-    "Vue", 
     "HTML", 
-    "CSS",
-    "Dart"
+    "CSS"
   ],
   "Backend": [
     "Node.js", 
