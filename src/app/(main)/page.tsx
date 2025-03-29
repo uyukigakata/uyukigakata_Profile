@@ -80,17 +80,7 @@ export default function Home() {
               </div>
             </li>
             <li>
-              <strong>好きなツール:</strong>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {profileData.tools.map((tool) => (
-                  <span key={tool} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </li>
-            <li>
-              <strong>Discorde:</strong>
+              <strong>Discord:</strong>
               <div className="flex flex-wrap gap-2 mt-2">
                 {profileData.contact.map((contact) => (
                   <span key={contact} className="px-4 py-2 bg-gray-700 text-white rounded-full shadow">

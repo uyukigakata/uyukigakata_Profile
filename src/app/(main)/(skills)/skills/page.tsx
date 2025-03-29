@@ -5,7 +5,6 @@ export default function SkillsPage() {
   return (
     <div className="max-w-3xl mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4 text-white">スキル一覧</h1>
-      
       {/* 各カテゴリごとに表示 */}
       {Object.entries(skillsData).map(([category, skillList]) => (
         skillList.length > 0 && (
