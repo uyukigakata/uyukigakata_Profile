@@ -53,23 +53,27 @@ const ProductsPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {projects.map((product: Product) => (
               <div
-                key={product.id}
-                className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105"
-                onClick={() => setSelectedProduct(product)}
-              >
+              key={product.id}
+              className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105"
+              onClick={() => setSelectedProduct(product)}
+            >
+              {/* 固定サイズの正方形枠 */}
+              <div className="relative w-full aspect-square bg-gray-100">
                 <Image
                   src={product.image}
                   alt={product.title}
-                  width={1000}
-                  height={250}
-                  className="w-full h-48 object-cover"
+                  fill
+                  className="object-contain p-2"
                   priority
                 />
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold">{product.title}</h3>
-                  <p className="text-gray-600 mt-2">{product.description}</p>
-                </div>
               </div>
+            
+              <div className="p-4">
+                <h3 className="text-xl font-semibold">{product.title}</h3>
+                <p className="text-gray-600 mt-2">{product.description}</p>
+              </div>
+            </div>
+            
             ))}
           </div>
         </div>
@@ -94,8 +98,8 @@ const ProductsPage = () => {
             <Image
               src={selectedProduct.image}
               alt={selectedProduct.title}
-              width={1000}
-              height={250}
+              width={400}
+              height={400}
               className="w-full max-h-[80vh] object-contain rounded"
             />
             <h2 className="text-2xl font-bold mt-4">{selectedProduct.title}</h2>
