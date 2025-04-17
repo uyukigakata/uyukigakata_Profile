@@ -4,7 +4,7 @@
     "2024": [
       {
         "id": "enjob",
-        "title": "えんじょっぷ",
+        "title": "「えんじょっぷ」",
         "description": "SNS投稿の炎上リスクを事前に判定するシステム。",
         "image": "/enjop_1.png",
         "github": "https://github.com/uyukigakata/enjop",
@@ -12,11 +12,11 @@
       },
       {
         "id": "robot-game",
-        "title": "ロボットゲーム",
+        "title": "「3DロボットFPSゲーム」",
         "description": "Unityで開発した対戦型ロボットゲーム。",
         "image": "/IoA_Robot.png",
         "github": "https://github.com/uyukigakata/IoA3Drobot",
-        "url": "none"
+        "url": "https://ioa2024robot.vercel.app/"
       }
     ],
     "2023": [
