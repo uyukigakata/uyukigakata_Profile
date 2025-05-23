@@ -7,30 +7,40 @@ type ListSectionProps = {
 };
 
 const ListSection: React.FC<ListSectionProps> = ({ title, items }) => (
-  <section className="mb-6">
-    <h2 className="text-lg font-bold mb-2">{title}</h2>
-    <div className="flex flex-wrap gap-3">
+  <div className="glass-card rounded-2xl p-8 shadow-lg animate-card-appear">
+    <h2 className="text-2xl font-bold mb-6 text-emerald-800 border-l-4 border-emerald-500 pl-4">
+      {title}
+    </h2>
+    
+    <div className="space-y-3">
       {items.map((item, index) => (
-        <span
+        <div
           key={index}
-          className="bg-gray-800 text-white px-4 py-2 rounded-full text-sm"
+          className="bg-gradient-to-r from-emerald-50 to-teal-50 hover:from-emerald-100 hover:to-teal-100 p-4 rounded-xl border border-emerald-200 transition-all duration-200 hover:shadow-md"
         >
-          {item}
-        </span>
+          <p className="text-emerald-800 font-medium">{item}</p>
+        </div>
       ))}
     </div>
-  </section>
+  </div>
 );
 
 const AwordsPage: React.FC = () => {
   const { 資格: certifications, "認定・賞": awards } = data;
 
   return (
-    <div className="bg-gray-900 text-white py-10 px-6 w-full">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl font-bold mb-6">資格と賞状</h1>
-        <ListSection title="資格" items={certifications} />
-        <ListSection title="賞状" items={awards} />
+    <div className="max-w-4xl mx-auto px-6 py-12">
+      <h1 className="text-4xl font-bold mb-12 text-center gradient-text animate-fade-in-up">
+        資格と賞状
+      </h1>
+      
+      <div className="space-y-8">
+        <div style={{ animationDelay: '200ms' }}>
+          <ListSection title="資格" items={certifications} />
+        </div>
+        <div style={{ animationDelay: '400ms' }}>
+          <ListSection title="認定・賞" items={awards} />
+        </div>
       </div>
     </div>
   );

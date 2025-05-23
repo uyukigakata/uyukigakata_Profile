@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-// 記事の型定義
 type Article = {
   id: string;
   title: string;
@@ -8,10 +7,9 @@ type Article = {
   platform: "Qiita" | "Zenn" | "Note";
 };
 
-// 記事を取得する関数
 async function fetchArticles(): Promise<Article[]> {
   try {
-    // Qiita API
+    // API呼び出し処理は元のまま
     const qiitaRes = await fetch("https://qiita.com/api/v2/users/uyukigakata/items");
     const qiitaData = await qiitaRes.json();
     type QiitaItem = {
@@ -27,7 +25,6 @@ async function fetchArticles(): Promise<Article[]> {
       platform: "Qiita",
     }));
 
-    // Zenn API
     const zennRes = await fetch("https://zenn.dev/api/articles?username=uyukigakata");
     const zennData = await zennRes.json();
     type ZennArticle = {
@@ -43,7 +40,6 @@ async function fetchArticles(): Promise<Article[]> {
       platform: "Zenn",
     }));
 
-    // Note は API がないため、手動でURLを指定
     const noteArticles: Article[] = [
       {
         id: "note-1",
@@ -60,50 +56,72 @@ async function fetchArticles(): Promise<Article[]> {
   }
 }
 
-// `page.tsx` (Next.js App Router)
 export default async function BlogPage() {
   const articles = await fetchArticles();
 
+  const platformColors = {
+    Qiita: "from-green-500 to-emerald-500",
+    Zenn: "from-blue-500 to-teal-500", 
+    Note: "from-purple-500 to-emerald-500"
+  };
+
   return (
-    <div className="max-w-3xl mx-auto p-4">
-      {/* 🛠 上部に余白を追加（mt-6） */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 mb-6">
-        <Link href="https://qiita.com/uyukigakata" target="_blank">
-          <div className="p-4 bg-gray-800 rounded-lg shadow-md text-center hover:bg-gray-700">
-            <h2 className="text-lg font-semibold text-white">Qiita</h2>
-            <p className="text-gray-400">技術記事を投稿</p>
+    <div className="max-w-6xl mx-auto px-6 py-12">
+      {/* プラットフォーム紹介 */}
+      <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="glass-card rounded-2xl p-6 text-center shadow-lg animate-card-appear">
+          <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+            <span className="text-white font-bold text-xl">Q</span>
           </div>
-        </Link>
+          <h3 className="text-xl font-bold text-emerald-800 mb-2">Qiita</h3>
+          <p className="text-emerald-600">技術記事を投稿</p>
+        </div>
 
-        <Link href="https://zenn.dev/uyukigakata" target="_blank">
-          <div className="p-4 bg-gray-800 rounded-lg shadow-md text-center hover:bg-gray-700">
-            <h2 className="text-lg font-semibold text-white">Zenn</h2>
-            <p className="text-gray-400">知見をシェア</p>
+        <div className="glass-card rounded-2xl p-6 text-center shadow-lg animate-card-appear" style={{animationDelay: '200ms'}}>
+          <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full flex items-center justify-center">
+            <span className="text-white font-bold text-xl">Z</span>
           </div>
-        </Link>
+          <h3 className="text-xl font-bold text-emerald-800 mb-2">Zenn</h3>
+          <p className="text-emerald-600">知見をシェア</p>
+        </div>
 
-        <Link href="https://note.com/yuu120739" target="_blank">
-          <div className="p-4 bg-gray-800 rounded-lg shadow-md text-center hover:bg-gray-700">
-            <h2 className="text-lg font-semibold text-white">Note</h2>
-            <p className="text-gray-400">日々の思考を記録</p>
+        <div className="glass-card rounded-2xl p-6 text-center shadow-lg animate-card-appear" style={{animationDelay: '400ms'}}>
+          <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-emerald-500 rounded-full flex items-center justify-center">
+            <span className="text-white font-bold text-xl">N</span>
           </div>
-        </Link>
+          <h3 className="text-xl font-bold text-emerald-800 mb-2">Note</h3>
+          <p className="text-emerald-600">日々の思考を記録</p>
+        </div>
       </div>
 
       {/* 記事一覧 */}
-      <h1 className="text-2xl font-bold mb-4 text-white">最新の記事</h1>
-      <ul>
-        {articles.map((article) => (
-          <li key={article.id} className="mb-3">
-            <Link href={article.url} target="_blank">
-              <div className="p-3 bg-gray-800 rounded-lg shadow-md hover:bg-gray-700">
-                <span className="text-lg font-semibold text-white">{article.title}</span>
-                <span className="ml-2 text-sm text-gray-400">({article.platform})</span>
+      <h2 className="text-3xl font-bold mb-8 gradient-text text-center animate-fade-in-up">
+        最新の記事
+      </h2>
+
+      <div className="grid gap-4">
+        {articles.map((article, index) => (
+          <Link
+            key={article.id}
+            href={article.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-102 animate-card-appear group"
+            style={{ animationDelay: `${index * 100}ms` }}
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-emerald-800 group-hover:text-emerald-600 transition-colors">
+                  {article.title}
+                </h3>
               </div>
-            </Link>
-          </li>
+              <div className={`px-3 py-1 rounded-full text-white text-sm font-medium bg-gradient-to-r ${platformColors[article.platform]} ml-4`}>
+                {article.platform}
+              </div>
+            </div>
+          </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
