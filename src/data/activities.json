@@ -1,0 +1,72 @@
+[
+  {
+    "date": "2022/04",
+    "title": "情報セキュリティスキルアッププロジェクト所属",
+    "side": "left"
+  },
+  {
+    "date": "2023/05",
+    "title": "西日本横断サイバーセキュリティ・グランプリ",
+    "description": "CTF優勝（1位）",
+    "side": "right"
+  },
+  {
+    "date": "2023/08",
+    "title": "KITハッカソン参加",
+    "side": "left"
+  },
+  {
+    "date": "2023/10",
+    "title": "IoAプロジェクト所属",
+    "side": "right"
+  },
+  {
+    "date": "2023/12",
+    "title": "KITアドベントカレンダー",
+    "description": "Qiita投稿 / LINE Bot作成",
+    "side": "left"
+  },
+  {
+    "date": "2024/04",
+    "title": "スキルアッププロジェクト幹部",
+    "description": "IoA運営 / Unity班指導",
+    "side": "right"
+  },
+  {
+    "date": "2024/06",
+    "title": "SecHack365参加",
+    "description": "炎上検知システム開発",
+    "side": "left"
+  },
+  {
+    "date": "2025/05",
+    "title": "勤怠管理システム作成",
+    "side": "right"
+  },
+  {
+    "date": "2025/06",
+    "title": "Interop2025発表",
+    "side": "left"
+  },
+  {
+    "date": "2025/08",
+    "title": "セキュリティキャンプ全国大会",
+    "side": "right"
+  },   
+ {
+    "date": "2025/08",
+    "title": "iCTSC予選突破",
+    "side": "left"
+  },  
+   {
+    "date": "2025/08",
+    "title": "県警訪問",
+    "side": "right"
+  },  
+  {
+    "date": "2026/03",
+    "title": "iCTSC決勝",
+    "description": "13位 / 15チーム",
+    "side": "left"
+  }
+]

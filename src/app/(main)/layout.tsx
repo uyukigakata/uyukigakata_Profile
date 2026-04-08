@@ -7,29 +7,45 @@ import NavFooter from "@/components/SideMenu/NavFooter/NavFooter";
 
 // ローディングアニメーションコンポーネント
 const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
+  const [dots, setDots] = useState<
+    { left: number; top: number; delay: number; duration: number }[]
+  >([]);
+
   useEffect(() => {
+    // ランダム値はクライアントでのみ生成
+    const generated = Array.from({ length: 20 }).map(() => ({
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      delay: Math.random() * 2,
+      duration: 2 + Math.random() * 2,
+    }));
+    setDots(generated);
+
     const timer = setTimeout(() => {
       onComplete();
     }, 2500);
+
     return () => clearTimeout(timer);
   }, [onComplete]);
 
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-emerald-900 via-teal-800 to-emerald-700 flex items-center justify-center z-50">
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {dots.map((dot, i) => (
           <div
             key={i}
             className="absolute w-2 h-2 bg-emerald-300 rounded-full opacity-30 animate-pulse"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 2}s`,
-              animationDuration: `${2 + Math.random() * 2}s`
+              left: `${dot.left}%`,
+              top: `${dot.top}%`,
+              animationDelay: `${dot.delay}s`,
+              animationDuration: `${dot.duration}s`,
             }}
           />
         ))}
       </div>
+
+      {/* 以下そのまま */}
       
       <div className="text-center z-10">
         <div className="mb-8">

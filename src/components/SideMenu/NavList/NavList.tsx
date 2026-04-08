@@ -1,5 +1,5 @@
 import { FaPen } from "react-icons/fa6";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaHistory } from "react-icons/fa";
 import NavItem from "./NavItem/NavItem";
 import { FaAward } from "react-icons/fa6";
 import { MdDeveloperMode } from "react-icons/md";
@@ -42,7 +42,13 @@ const NavList = () => {
             icon: <MdDeveloperMode className="size-3" />
         },
         {
-            id: 5, 
+            id: 5,
+            label: 'activities',
+            link: '/activities',
+            icon: <FaHistory className="size-3" />
+        },
+        {
+            id: 6, 
             label: 'awords', 
             link: '/awords', 
             icon: <FaAward className="size-3" />
